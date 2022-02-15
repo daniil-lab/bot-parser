@@ -17,6 +17,10 @@ COPY --from=build /home/gradle/wp/src/main/resources/hibernate.cfg.xml .
 
 #COPY ./images ./images
 
+RUN curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
+RUN add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+
 EXPOSE 3001
 
 ENTRYPOINT java -jar telegram-parser.main.jar
