@@ -4,10 +4,14 @@ plugins {
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'}
 
 group 'com.parser'
-version '1.0-SNAPSHOT'
+version 'dev'
 
 repositories {
     mavenCentral()
+}
+
+jar {
+    baseName("system")
 }
 
 dependencies {
