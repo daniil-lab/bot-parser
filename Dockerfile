@@ -13,6 +13,7 @@ RUN #gradle clean build
 FROM openjdk:17-alpine
 
 COPY --from=build /home/gradle/wp/out/artifacts/telegram_parser_main_jar/telegram-parser.main.jar .
+COPY --from=build /home/gradle/wp/src/main/resources/hibernate.cfg.xml .
 
 #COPY ./images ./images
 
