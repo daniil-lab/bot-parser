@@ -8,15 +8,14 @@ RUN git clone https://daniil-lab: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@github
 
 WORKDIR wp
 
-RUN gradle clean build
+RUN #gradle clean build
 
 FROM openjdk:17-alpine
 
-COPY --from=build /home/gradle/wp/build/libs/system-dev.jar .
+COPY --from=build /home/gradle/wp/out/artifacts/telegram_parser_main_jar/telegram-parser.main.jar .
 
-COPY ./images ./images
+#COPY ./images ./images
 
 EXPOSE 8080
 
-ENTRYPOINT java -jar system-dev.jar
-
+ENTRYPOINT java -jar telegram-parser.main.jar
