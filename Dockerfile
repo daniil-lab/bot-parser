@@ -17,6 +17,6 @@ COPY --from=build /home/gradle/wp/src/main/resources/hibernate.cfg.xml .
 
 #COPY ./images ./images
 
-EXPOSE 8080
+EXPOSE 3001
 
 ENTRYPOINT java -jar telegram-parser.main.jar
